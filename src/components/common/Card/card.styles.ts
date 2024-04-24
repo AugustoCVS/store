@@ -2,20 +2,28 @@ import styled, { css } from "styled-components";
 
 export const CardRoot = styled.div(
   ({ theme }) => css`
-    width: 100%;
-    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
+    width: 100%;
+    height: 100%;
     max-width: 13.625rem;
-    max-height: 17.813rem;
     border-radius: 0.5rem;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     background-color: ${theme.white};
   `
 );
+
+export const ContentContainer = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  padding: 1rem;
+`;
 
 export const ImageWrapper = styled.div`
   display: flex;
@@ -24,9 +32,8 @@ export const ImageWrapper = styled.div`
 `;
 
 export const TitleWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
 `;
 
 export const TitleText = styled.h3(
@@ -40,13 +47,16 @@ export const TitleText = styled.h3(
   `
 );
 
-export const PriceTagWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 0.313rem;
-  padding: 0.5rem;
-`;
+export const PriceTagWrapper = styled.div(
+  ({ theme }) => css`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.313rem;
+    padding: 0.2rem;
+    background-color: ${theme.gray};
+  `
+);
 
 export const PriceTag = styled.p(
   ({ theme }) => css`
@@ -69,11 +79,13 @@ export const SubtitleText = styled.p(
 
 export const ButtonWrapper = styled.div(
   ({ theme }) => css`
+    background-color: ${theme.blue};
     display: flex;
+    width: 100%;
     align-items: center;
     justify-content: center;
-    gap: 2rem;
-    background-color: ${theme.blue};
+    gap: 0.5rem;
+    padding: 0.5rem 0rem;
   `
 );
 
