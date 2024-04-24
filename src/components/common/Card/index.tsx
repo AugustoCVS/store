@@ -1,4 +1,7 @@
+"use client";
+
 import { Button } from "./card.button";
+import { Content } from "./card.content-container";
 import { CardImage } from "./card.image";
 import { Root } from "./card.root";
 import { Subtitle } from "./card.subtitle";
@@ -14,4 +17,5 @@ export const Card = {
   Subtitle: Subtitle,
   TitleContainer: TitleContainer,
   Title: Title,
+  ContentContainer: Content,
 };
