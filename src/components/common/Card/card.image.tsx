@@ -1,12 +1,11 @@
 import React from "react";
 import { ImageProps } from "./card.types";
 import { ImageWrapper } from "./card.styles";
-import Image from "next/image";
 
-export const CardImage: React.FC<ImageProps> = ({ url }) => {
+export const CardImage: React.FC<ImageProps> = ({ url, width, height }) => {
   return (
     <ImageWrapper>
-      <Image src={url} alt="product image" />
+      <img src={url} alt="product image" width={width} height={height} />
     </ImageWrapper>
   );
 };
