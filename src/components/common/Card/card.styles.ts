@@ -8,6 +8,7 @@ export const CardRoot = styled.div(
     width: 100%;
     height: 100%;
     max-width: 13.625rem;
+    min-height: 17.8rem;
     border-radius: 0.5rem;
     box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.1);
     overflow: hidden;
@@ -21,8 +22,10 @@ export const ContentContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   gap: 0.2rem;
   padding: 1rem;
+
 `;
 
 export const ImageWrapper = styled.div`
@@ -32,8 +35,10 @@ export const ImageWrapper = styled.div`
 `;
 
 export const TitleWrapper = styled.div`
-  display: grid;
-  grid-template-columns: 2fr 1fr;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 `;
 
 export const TitleText = styled.h3(
@@ -73,7 +78,6 @@ export const SubtitleText = styled.p(
     color: ${theme.text_color};
     font-family: inherit;
     font-weight: 300;
-    flex: 1;
   `
 );
 
@@ -85,7 +89,8 @@ export const ButtonWrapper = styled.div(
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    padding: 0.5rem 0rem;
+    padding: 0.3rem 0rem;
+    cursor: pointer;
   `
 );
 
