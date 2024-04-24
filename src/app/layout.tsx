@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import { ReactQueryProvider } from "@/src/Providers/ReactQueryProvider";
 import StyledComponentsRegistry from "@/src/styles/registry";
+import "react-loading-skeleton/dist/skeleton.css";
 
 import "@/src/styles/globals.css";
 import { ThemeApplicationProvider } from "../Providers/ThemeProvider";
