@@ -1,5 +1,5 @@
 export type RootProps = {
-  id: string;
+  id?: string;
   children: React.ReactNode;
 };
 
