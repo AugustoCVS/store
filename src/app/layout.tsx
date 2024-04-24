@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
-import { ReactQueryProvider } from "@/src/utils/ReactQueryProvider";
+import { ReactQueryProvider } from "@/src/Providers/ReactQueryProvider";
 import StyledComponentsRegistry from "@/src/styles/registry";
 
 import "@/src/styles/globals.css";
+import { ThemeApplicationProvider } from "../Providers/ThemeProvider";
 
 const montserrat = Montserrat({
   weight: ["200", "300", "400", "600", "700"],
@@ -23,9 +24,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={montserrat.className}>
-        <ReactQueryProvider>
-          <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
-        </ReactQueryProvider>
+        <ThemeApplicationProvider>
+          <ReactQueryProvider>
+            <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+          </ReactQueryProvider>
+        </ThemeApplicationProvider>
       </body>
     </html>
   );
