@@ -3,4 +3,5 @@ export const defaultTheme = {
   black: "#000000",
   gray: "#373737",
   lightGray: "#EEEEEE",
+  white: "#FFFFFF",
 };
