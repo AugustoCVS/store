@@ -3,6 +3,8 @@ import { Montserrat } from "next/font/google";
 import { ReactQueryProvider } from "@/src/providers/ReactQueryProvider";
 import StyledComponentsRegistry from "@/src/styles/registry";
 import "react-loading-skeleton/dist/skeleton.css";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import "@/src/styles/globals.css";
 import { ThemeApplicationProvider } from "../providers/ThemeProvider";
@@ -29,7 +31,10 @@ export default function RootLayout({
         <ReduxProvider>
           <ThemeApplicationProvider>
             <ReactQueryProvider>
-              <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+              <StyledComponentsRegistry>
+                {children}
+                <ToastContainer />
+              </StyledComponentsRegistry>
             </ReactQueryProvider>
           </ThemeApplicationProvider>
         </ReduxProvider>
