@@ -7,6 +7,7 @@ import {
 } from "@/src/redux/Slices/products.slice";
 import { MessageUtils } from "@/src/utils/message";
 import { useDispatch, useSelector } from "react-redux";
+import { SUCCESS_MESSAGE } from "./cart.constants";
 
 export const useCart = () => {
   const products = useSelector(
@@ -35,7 +36,7 @@ export const useCart = () => {
   const handleBuyProducts = (): void => {
     dispatch(removeAllProducts());
     MessageUtils.handleSendToast({
-      message: "Compra realizada com sucesso!",
+      message: SUCCESS_MESSAGE,
       type: "success",
     });
   }
