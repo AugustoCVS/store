@@ -13,7 +13,7 @@ export const useProducts = () => {
     orderBy: "DESC",
   });
 
-  const { data, isLoading } = useQuery({
+  const { data, isLoading, error } = useQuery({
     queryKey: ["products"],
     queryFn: () =>
       ProductService.getProducts({
@@ -30,6 +30,7 @@ export const useProducts = () => {
     states: {
       data,
       isLoading,
+      error,
     },
   };
 };
