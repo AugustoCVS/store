@@ -5,4 +5,5 @@ export const defaultTheme = {
   lightGray: "#EEEEEE",
   white: "#FFFFFF",
   text_color: "#2C2C2C",
+  border_color: "#BFBFBF",
 };
