@@ -3,23 +3,26 @@
 import React from "react";
 
 import * as S from "./cart.styles";
-import { menuSlide } from "./cart.constants";
+
 import { Header } from "./components/Header/header.component";
 import { Cta } from "./components/CTA/cta.component";
 import { Footer } from "./components/Footer/footer.component";
 import { Button } from "./components/Button/button.component";
+import { CartProps } from "./cart.types";
+import { Curve } from "./components/Curve/curve.component";
+import { menuSlide } from "./cart.constants";
 
-export const Cart: React.FC = () => {
+export const Cart: React.FC<CartProps> = ({ handleCloseTheCart }) => {
   return (
     <S.Container
       variants={menuSlide}
-      initial="initial"
       animate="enter"
       exit="exit"
+      initial="initial"
     >
       <S.Content>
         <S.Wrapper>
-          <Header />
+          <Header handleCloseTheCart={handleCloseTheCart} />
 
           <Cta
             img="https://mks-sistemas.nyc3.digitaloceanspaces.com/products/hyperx-cloudrevolver.webp"
