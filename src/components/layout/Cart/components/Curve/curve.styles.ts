@@ -1,11 +1,13 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
-export const SvgCurveContainer = styled.svg`
-  position: absolute;
-  top: 0;
-  left: -99px;
-  width: 100px;
-  height: 100%;
-  fill: rgb(41, 41, 41);
-  stroke: none;
-`;
+export const SvgCurveContainer = styled.svg(
+  ({ theme }) => css`
+    position: absolute;
+    top: 0;
+    left: -99px;
+    width: 100px;
+    height: 100%;
+    fill: ${theme.blue};
+    stroke: none;
+  `
+);

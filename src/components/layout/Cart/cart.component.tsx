@@ -9,8 +9,9 @@ import { Cta } from "./components/CTA/cta.component";
 import { Footer } from "./components/Footer/footer.component";
 import { Button } from "./components/Button/button.component";
 import { CartProps } from "./cart.types";
-import { Curve } from "./components/Curve/curve.component";
+
 import { menuSlide } from "./cart.constants";
+import { Curve } from "./components/Curve/curve.component";
 
 export const Cart: React.FC<CartProps> = ({ handleCloseTheCart }) => {
   return (
@@ -35,6 +36,7 @@ export const Cart: React.FC<CartProps> = ({ handleCloseTheCart }) => {
         <Footer text="1000.00" />
       </S.Content>
       <Button onClick={() => console.log("clicou")} />
+      <Curve />
     </S.Container>
   );
 };

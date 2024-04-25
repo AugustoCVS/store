@@ -1,11 +1,14 @@
+"use client";
+
 import React from "react";
 import { motion } from "framer-motion";
 import { SvgCurveContainer } from "./curve.styles";
 
-export default function Index() {
+export const Curve: React.FC = () => {
   const initialPath = `M100 0 L200 0 L200 ${window.innerHeight} L100 ${
     window.innerHeight
   } Q-100 ${window.innerHeight / 2} 100 0`;
+
   const targetPath = `M100 0 L200 0 L200 ${window.innerHeight} L100 ${
     window.innerHeight
   } Q100 ${window.innerHeight / 2} 100 0`;
@@ -34,4 +37,4 @@ export default function Index() {
       ></motion.path>
     </SvgCurveContainer>
   );
-}
+};
