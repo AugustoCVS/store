@@ -51,7 +51,7 @@ export const Cart: React.FC<CartProps> = ({ handleCloseTheCart }) => {
 
         <Footer text={actions.handleGetTotal()} />
       </S.Content>
-      <Button onClick={() => console.log("clicou")} />
+      <Button onClick={actions.handleBuyProducts} />
       <Curve />
     </S.Container>
   );

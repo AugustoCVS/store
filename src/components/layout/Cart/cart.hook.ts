@@ -2,8 +2,10 @@ import { ProductProps } from "@/src/@types/product";
 import {
   decreaseProductQuantity,
   increaseProductQuantity,
+  removeAllProducts,
   removeProduct,
 } from "@/src/redux/Slices/products.slice";
+import { MessageUtils } from "@/src/utils/message";
 import { useDispatch, useSelector } from "react-redux";
 
 export const useCart = () => {
@@ -30,6 +32,14 @@ export const useCart = () => {
     dispatch(removeProduct(id));
   };
 
+  const handleBuyProducts = (): void => {
+    dispatch(removeAllProducts());
+    MessageUtils.handleSendToast({
+      message: "Compra realizada com sucesso!",
+      type: "success",
+    });
+  }
+
   return {
     states: {
       products,
@@ -39,6 +49,7 @@ export const useCart = () => {
       handleDecreaseQuantity,
       handleGetTotal,
       handleRemoveProduct,
+      handleBuyProducts
     },
   };
 };
