@@ -14,14 +14,7 @@ export const Cta: React.FC<CtaProps> = ({
 }) => {
   return (
     <S.Container>
-      <img
-        src={img}
-        width={50}
-        height={60}
-        style={{
-          marginLeft: 10,
-        }}
-      />
+      <img src={img} width={50} height={60} />
 
       <S.Text>{title}</S.Text>
 

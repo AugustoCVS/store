@@ -3,7 +3,7 @@ import styled, { css } from "styled-components";
 
 export const Container = styled(motion.div)(
   ({ theme }) => css`
-    width: 30.375rem;
+    width: 19rem;
     height: 100vh;
     right: 0;
     top: 0;
@@ -14,6 +14,10 @@ export const Container = styled(motion.div)(
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+
+    @media (min-width: 492px) {
+      width: 30.375rem;
+    }
   `
 );
 
@@ -24,9 +28,13 @@ export const Content = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding: 2rem;
+  padding: 0.5rem;
   gap: 2rem;
   overflow-y: auto;
+
+  @media (min-width: 492px) {
+    padding: 2rem;
+  }
 `;
 
 export const Wrapper = styled.div`

@@ -4,7 +4,7 @@ export const Container = styled.div(
   ({ theme }) => css`
     width: 100%;
     height: 100%;
-    max-width: 23.688rem;
+    max-width: 16rem;
     max-height: 5.9rem;
     border-radius: 0.5rem;
     position: relative;
@@ -12,7 +12,12 @@ export const Container = styled.div(
     grid-template-columns: repeat(4, 1fr);
     align-items: center;
     background-color: ${theme.white};
-    padding: 0.5rem;
+    padding: 0.5rem 0.5rem 0.1rem 0.1rem;
+
+    @media (min-width: 492px) {
+      max-width: 23.688rem;
+      padding: 0.5rem;
+    }
   `
 );
 
@@ -37,6 +42,7 @@ export const QuantityContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  margin-bottom: 0.6rem;
   gap: 0.3rem;
 `;
 
