@@ -1,0 +1,1 @@
+export const ERROR_MESSAGE = "Erro ao carregar os produtos, tente novamente mais tarde!"
