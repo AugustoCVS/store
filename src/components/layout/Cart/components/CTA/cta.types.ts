@@ -1,5 +1,4 @@
 export type CtaProps = {
-  id: string;
   img: string;
   title: string;
   quantity: number | undefined;

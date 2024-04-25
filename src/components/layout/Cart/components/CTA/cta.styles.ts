@@ -26,6 +26,13 @@ export const Text = styled.p<{ isPriceText?: boolean }>(
   `
 );
 
+export const Wrapper = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
 export const QuantityContainer = styled.div`
   display: flex;
   flex-direction: column;

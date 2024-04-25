@@ -38,3 +38,13 @@ export const Wrapper = styled.div`
   gap: 4rem;
   overflow-y: auto;
 `;
+
+export const CtaWrapper = styled.div`
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem 0;
+`;

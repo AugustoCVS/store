@@ -28,25 +28,26 @@ export const Cart: React.FC<CartProps> = ({ handleCloseTheCart }) => {
         <S.Wrapper>
           <Header handleCloseTheCart={handleCloseTheCart} />
 
-          {states.products.map((product) => {
-            return (
-              <Cta
-                id={product.id}
-                key={product.id}
-                img={product.photo}
-                title={product.name}
-                price={product.price}
-                quantity={product.quantity}
-                increaseQuantity={() =>
-                  actions.handleIncreaseQuantity(product.id)
-                }
-                decreaseQuantity={() =>
-                  actions.handleDecreaseQuantity(product.id)
-                }
-                removeProduct={() => actions.handleRemoveProduct(product.id)}
-              />
-            );
-          })}
+          <S.CtaWrapper>
+            {states.products.map((product) => {
+              return (
+                <Cta
+                  key={product.id}
+                  img={product.photo}
+                  title={product.name}
+                  price={product.price}
+                  quantity={product.quantity}
+                  increaseQuantity={() =>
+                    actions.handleIncreaseQuantity(product.id)
+                  }
+                  decreaseQuantity={() =>
+                    actions.handleDecreaseQuantity(product.id)
+                  }
+                  removeProduct={() => actions.handleRemoveProduct(product.id)}
+                />
+              );
+            })}
+          </S.CtaWrapper>
         </S.Wrapper>
 
         <Footer text={actions.handleGetTotal()} />

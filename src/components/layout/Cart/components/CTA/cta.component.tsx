@@ -4,7 +4,6 @@ import { Minus, Plus, X } from "lucide-react";
 import * as S from "./cta.styles";
 
 export const Cta: React.FC<CtaProps> = ({
-  id,
   img,
   price,
   quantity,
@@ -15,20 +14,29 @@ export const Cta: React.FC<CtaProps> = ({
 }) => {
   return (
     <S.Container>
-      <img src={img} width={50} height={60} />
+      <img
+        src={img}
+        width={50}
+        height={60}
+        style={{
+          marginLeft: 10,
+        }}
+      />
 
       <S.Text>{title}</S.Text>
 
-      <S.QuantityContainer>
-        <S.QuantityText>Qtd:</S.QuantityText>
-        <S.QuantityBox>
-          <Minus width={5} color="black" onClick={decreaseQuantity} />
-          <S.Divider />
-          <S.QuantityText isQuantity>{quantity}</S.QuantityText>
-          <S.Divider />
-          <Plus width={5} color="black" onClick={increaseQuantity} />
-        </S.QuantityBox>
-      </S.QuantityContainer>
+      <S.Wrapper>
+        <S.QuantityContainer>
+          <S.QuantityText>Qtd:</S.QuantityText>
+          <S.QuantityBox>
+            <Minus width={5} color="black" onClick={decreaseQuantity} />
+            <S.Divider />
+            <S.QuantityText isQuantity>{quantity}</S.QuantityText>
+            <S.Divider />
+            <Plus width={5} color="black" onClick={increaseQuantity} />
+          </S.QuantityBox>
+        </S.QuantityContainer>
+      </S.Wrapper>
 
       <S.Text isPriceText>R${price}</S.Text>
       <S.ButtonContainer onClick={removeProduct}>
