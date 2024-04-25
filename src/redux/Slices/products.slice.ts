@@ -36,9 +36,18 @@ export const productsSlice = createSlice({
     removeProduct: (state, action: PayloadAction<string>) => {
       return state.filter((product) => product.id !== action.payload);
     },
+
+    removeAllProducts: () => {
+      return initialState;
+    },
   },
 });
 
-export const { addProduct, increaseProductQuantity, decreaseProductQuantity, removeProduct } =
-  productsSlice.actions;
+export const {
+  addProduct,
+  increaseProductQuantity,
+  decreaseProductQuantity,
+  removeProduct,
+  removeAllProducts,
+} = productsSlice.actions;
 export const productsReducer = productsSlice.reducer;
