@@ -6,9 +6,9 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import "@/src/styles/globals.css";
-import { Redux } from "../providers/ReduxProvider";
-import { ThemeApplication } from "../providers/ThemeProvider";
-import { ReactQuery } from "../providers/ReactQueryProvider";
+import { Redux } from "../providers/ReduxStore";
+import { ThemeApplication } from "../providers/ThemeApplication";
+import { ReactQuery } from "../providers/ReactQuery";
 
 const montserrat = Montserrat({
   weight: ["200", "300", "400", "600", "700"],
