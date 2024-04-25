@@ -1,9 +1,9 @@
 import React from "react";
 import { ShoppingCart } from "lucide-react";
 
-import * as S from "./cart.styles";
+import * as S from "./cart-button.styles";
 
-export const Cart: React.FC = () => {
+export const CartButton: React.FC = () => {
   return (
     <S.Wrapper>
       <ShoppingCart size={18} color="black" />
