@@ -34,16 +34,7 @@ export const Products: React.FC = () => {
     <S.Container>
       <S.ProductWrapper>
         {states.data?.products.map((product) => {
-          return (
-            <ProductCard
-              key={product.id}
-              id={product.id}
-              name={product.name}
-              photo={product.photo}
-              price={product.price}
-              description={product.description}
-            />
-          );
+          return <ProductCard key={product.id} product={product} />;
         })}
       </S.ProductWrapper>
     </S.Container>
