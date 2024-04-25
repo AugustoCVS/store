@@ -12,8 +12,11 @@ import { CartProps } from "./cart.types";
 
 import { menuSlide } from "./cart.constants";
 import { Curve } from "./components/Curve/curve.component";
+import { useCart } from "./cart.hook";
 
 export const Cart: React.FC<CartProps> = ({ handleCloseTheCart }) => {
+  const { states, actions } = useCart();
+
   return (
     <S.Container
       variants={menuSlide}
@@ -25,15 +28,28 @@ export const Cart: React.FC<CartProps> = ({ handleCloseTheCart }) => {
         <S.Wrapper>
           <Header handleCloseTheCart={handleCloseTheCart} />
 
-          <Cta
-            img="https://mks-sistemas.nyc3.digitaloceanspaces.com/products/hyperx-cloudrevolver.webp"
-            title="Headset Cloud Revolver"
-            price="1000.00"
-            quantity={1}
-          />
+          {states.products.map((product) => {
+            return (
+              <Cta
+                id={product.id}
+                key={product.id}
+                img={product.photo}
+                title={product.name}
+                price={product.price}
+                quantity={product.quantity}
+                increaseQuantity={() =>
+                  actions.handleIncreaseQuantity(product.id)
+                }
+                decreaseQuantity={() =>
+                  actions.handleDecreaseQuantity(product.id)
+                }
+                removeProduct={() => actions.handleRemoveProduct(product.id)}
+              />
+            );
+          })}
         </S.Wrapper>
 
-        <Footer text="1000.00" />
+        <Footer text={actions.handleGetTotal()} />
       </S.Content>
       <Button onClick={() => console.log("clicou")} />
       <Curve />
