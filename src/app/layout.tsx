@@ -6,9 +6,9 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import "@/src/styles/globals.css";
-import { ReduxProvider } from "../providers/ReduxProvider";
-import { ThemeApplicationProvider } from "../providers/ThemeProvider";
-import { ReactQueryProvider } from "../providers/ReactQueryProvider";
+import { Redux } from "../providers/ReduxProvider";
+import { ThemeApplication } from "../providers/ThemeProvider";
+import { ReactQuery } from "../providers/ReactQueryProvider";
 
 const montserrat = Montserrat({
   weight: ["200", "300", "400", "600", "700"],
@@ -28,16 +28,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={montserrat.className}>
-        <ReduxProvider>
-          <ThemeApplicationProvider>
-            <ReactQueryProvider>
+        <Redux>
+          <ThemeApplication>
+            <ReactQuery>
               <StyledComponentsRegistry>
                 {children}
                 <ToastContainer />
               </StyledComponentsRegistry>
-            </ReactQueryProvider>
-          </ThemeApplicationProvider>
-        </ReduxProvider>
+            </ReactQuery>
+          </ThemeApplication>
+        </Redux>
       </body>
     </html>
   );
