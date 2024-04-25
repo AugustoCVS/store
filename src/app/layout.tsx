@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
-import { ReactQueryProvider } from "@/src/Providers/ReactQueryProvider";
+import { ReactQueryProvider } from "@/src/providers/ReactQueryProvider";
 import StyledComponentsRegistry from "@/src/styles/registry";
 import "react-loading-skeleton/dist/skeleton.css";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import "@/src/styles/globals.css";
-import { ThemeApplicationProvider } from "../Providers/ThemeProvider";
+import { ThemeApplicationProvider } from "../providers/ThemeProvider";
+import { ReduxProvider } from "../providers/ReduxProvider";
 
 const montserrat = Montserrat({
   weight: ["200", "300", "400", "600", "700"],
@@ -25,11 +28,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={montserrat.className}>
-        <ThemeApplicationProvider>
-          <ReactQueryProvider>
-            <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
-          </ReactQueryProvider>
-        </ThemeApplicationProvider>
+        <ReduxProvider>
+          <ThemeApplicationProvider>
+            <ReactQueryProvider>
+              <StyledComponentsRegistry>
+                {children}
+                <ToastContainer />
+              </StyledComponentsRegistry>
+            </ReactQueryProvider>
+          </ThemeApplicationProvider>
+        </ReduxProvider>
       </body>
     </html>
   );

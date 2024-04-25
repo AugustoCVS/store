@@ -8,6 +8,7 @@ export const Wrapper = styled.div(
   gap: 1rem;
   background-color: ${theme.white};
   border-radius: 0.5rem;
+  cursor: pointer;
   `
 )
 

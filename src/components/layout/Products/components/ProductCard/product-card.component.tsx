@@ -1,25 +1,26 @@
 import React from "react";
 import { Card } from "@/src/components/common/Card";
-import { ProductCardProps } from "./product-card.types";
+import { useProductCard } from "./product-card.hook";
+import { ProductProps } from "@/src/@types/product";
 
-export const ProductCard: React.FC<ProductCardProps> = ({
-  description,
-  id,
-  name,
-  photo,
-  price,
+export const ProductCard: React.FC<{ product: ProductProps }> = ({
+  product,
 }) => {
+  const { actions } = useProductCard();
+
   return (
-    <Card.Root id={id}>
+    <Card.Root id={product.id}>
       <Card.ContentContainer>
-        <Card.Image url={photo} width={100} height={100} />
+        <Card.Image url={product.photo} width={100} height={100} />
         <Card.TitleContainer>
-          <Card.Title text={name} />
-          <Card.Tag text={price} />
+          <Card.Title text={product.name} />
+          <Card.Tag text={product.price} />
         </Card.TitleContainer>
-        <Card.Subtitle text={description} />
+        <Card.Subtitle text={product.description} />
       </Card.ContentContainer>
-      <Card.Button onClick={() => console.log("click")} />
+      <Card.Button
+        onClick={() => actions.handleAddToCart({ product: product })}
+      />
     </Card.Root>
   );
 };
