@@ -1,10 +1,9 @@
-import { ToastProps } from "@/src/@types/toast";
 import { ProductRequest } from "@/src/services/interfaces/Product/product.type";
 import { ProductService } from "@/src/services/products";
 import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
-import { toast } from "react-toastify";
 import { ERROR_MESSAGE } from "./products.constants";
+import { MessageUtils } from "@/src/utils/message";
 
 export const useProducts = () => {
   const [reqParams, setReqParams] = useState<ProductRequest>({
@@ -14,18 +13,15 @@ export const useProducts = () => {
     orderBy: "DESC",
   });
 
-  const handleSendToast = ({message, type}: ToastProps) => {
-    return type === "error" ? toast.error(message) : toast.success(message);
-  }
-  
   const { data, isLoading } = useQuery({
     queryKey: ["products"],
-    queryFn: () => ProductService.getProducts({
-      data: reqParams,
-    }).catch((err: Error) => {
-      console.error(err);
-      handleSendToast({ message: ERROR_MESSAGE, type: "error" });
-    }),
+    queryFn: () =>
+      ProductService.getProducts({
+        data: reqParams,
+      }).catch((err: Error) => {
+        console.error(err);
+        MessageUtils.handleSendToast({ message: ERROR_MESSAGE, type: "error" });
+      }),
     refetchOnWindowFocus: false,
     retry: false,
   });
