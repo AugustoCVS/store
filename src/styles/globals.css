@@ -4,6 +4,13 @@
   box-sizing: border-box;
 }
 
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+
 ::-webkit-scrollbar {
   width: 8px;
 }
