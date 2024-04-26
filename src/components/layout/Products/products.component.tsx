@@ -28,10 +28,9 @@ export const Products: React.FC = () => {
               key={index}
               height={284}
               width={218}
-              baseColor="#2C2C2C"
+              baseColor="#EEEEEE"
               borderRadius={8}
-              highlightColor="#373737"
-              testId="product-skeleton"
+              highlightColor="#BFBFBF"
             />
           ))}
         </S.ProductWrapper>
