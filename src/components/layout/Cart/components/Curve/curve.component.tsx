@@ -4,6 +4,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import { SvgCurveContainer } from "./curve.styles";
 
+import { TESTS_IDS } from "./curve.constants";
+
 export const Curve: React.FC = () => {
   const initialPath = `M100 0 L200 0 L200 ${window.innerHeight} L100 ${
     window.innerHeight
@@ -28,7 +30,7 @@ export const Curve: React.FC = () => {
   };
 
   return (
-    <SvgCurveContainer>
+    <SvgCurveContainer data-testid={TESTS_IDS.CURVE}>
       <motion.path
         variants={curve}
         initial="initial"
