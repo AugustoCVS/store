@@ -10,3 +10,6 @@ export const TESTS_IDS = {
   TAG: "card_price_tag",
   SUBTITLE: "card_subtitle",
 };
+
+
+export const SUCCESS_MESSAGE = "Produto adicionado ao carrinho"
