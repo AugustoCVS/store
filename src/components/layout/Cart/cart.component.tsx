@@ -17,6 +17,8 @@ import { useCart } from "./cart.hook";
 export const Cart: React.FC<CartProps> = ({ handleCloseTheCart }) => {
   const { states, actions } = useCart();
 
+  console.log(states.products);
+
   return (
     <S.Container
       variants={menuSlide}
@@ -52,7 +54,10 @@ export const Cart: React.FC<CartProps> = ({ handleCloseTheCart }) => {
 
         <Footer text={actions.handleGetTotal()} />
       </S.Content>
-      <Button onClick={actions.handleBuyProducts} />
+      <Button
+        onClick={actions.handleBuyProducts}
+        disabled={!states.products.length}
+      />
       <Curve />
     </S.Container>
   );
