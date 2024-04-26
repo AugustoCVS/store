@@ -29,6 +29,9 @@ export const Cta: React.FC<CtaProps> = ({
               color="black"
               onClick={decreaseQuantity}
               data-testid={TESTS_IDS.MINUS}
+              style={{
+                cursor: "pointer",
+              }}
             />
             <S.Divider />
             <S.QuantityText isQuantity>{quantity}</S.QuantityText>
@@ -38,6 +41,9 @@ export const Cta: React.FC<CtaProps> = ({
               color="black"
               onClick={increaseQuantity}
               data-testid={TESTS_IDS.PLUS}
+              style={{
+                cursor: "pointer",
+              }}
             />
           </S.QuantityBox>
         </S.QuantityContainer>
