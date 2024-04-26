@@ -4,5 +4,4 @@ export type SkeletonProps = {
   baseColor: string;
   borderRadius: number;
   highlightColor: string;
-  testId: string;
 }

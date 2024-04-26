@@ -7,3 +7,14 @@ export const menuSlide = {
 };
 
 export const SUCCESS_MESSAGE = "Compra realizada com sucesso!";
+
+export const TESTS_IDS = {
+  CONTAINER: "cart-container",
+  CONTENT: "cart-content",
+  CTA_WRAPPER: "cart-cta-wrapper",
+  HEADER_BUTTON: "header-button",
+  CTA_MINUS: "cta-minus",
+  CTA_PLUS: "cta-plus",
+  CTA_BUTTON: "cta-button",
+  BUY_BUTTON: "button-container",
+}

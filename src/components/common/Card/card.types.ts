@@ -15,4 +15,5 @@ export type TextProps = {
 
 export type ButtonProps = {
   onClick: () => void;
+  text: string;
 };

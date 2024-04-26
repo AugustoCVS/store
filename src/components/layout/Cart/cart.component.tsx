@@ -10,7 +10,7 @@ import { Footer } from "./components/Footer/footer.component";
 import { Button } from "./components/Button/button.component";
 import { CartProps } from "./cart.types";
 
-import { menuSlide } from "./cart.constants";
+import { menuSlide, TESTS_IDS } from "./cart.constants";
 import { Curve } from "./components/Curve/curve.component";
 import { useCart } from "./cart.hook";
 
@@ -23,12 +23,13 @@ export const Cart: React.FC<CartProps> = ({ handleCloseTheCart }) => {
       animate="enter"
       exit="exit"
       initial="initial"
+      data-testid={TESTS_IDS.CONTAINER}
     >
-      <S.Content>
+      <S.Content data-testid={TESTS_IDS.CONTENT}>
         <S.Wrapper>
           <Header handleCloseTheCart={handleCloseTheCart} />
 
-          <S.CtaWrapper>
+          <S.CtaWrapper data-testid={TESTS_IDS.CTA_WRAPPER}>
             {states.products.map((product) => {
               return (
                 <Cta
@@ -52,7 +53,10 @@ export const Cart: React.FC<CartProps> = ({ handleCloseTheCart }) => {
 
         <Footer text={actions.handleGetTotal()} />
       </S.Content>
-      <Button onClick={actions.handleBuyProducts} />
+      <Button
+        onClick={actions.handleBuyProducts}
+        disabled={!states.products.length}
+      />
       <Curve />
     </S.Container>
   );

@@ -1,7 +1,8 @@
 import React from "react";
 import { TextProps } from "./card.types";
-import { SubtitleText, TitleText } from "./card.styles";
+import { SubtitleText } from "./card.styles";
+import { TESTS_IDS } from "./card.constans";
 
 export const Subtitle: React.FC<TextProps> = ({ text }) => {
-  return <SubtitleText>{text}</SubtitleText>;
+  return <SubtitleText data-testid={TESTS_IDS.SUBTITLE}>{text}</SubtitleText>;
 };

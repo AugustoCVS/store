@@ -20,6 +20,7 @@ export const ProductCard: React.FC<{ product: ProductProps }> = ({
       </Card.ContentContainer>
       <Card.Button
         onClick={() => actions.handleAddToCart({ product: product })}
+        text="comprar"
       />
     </Card.Root>
   );
