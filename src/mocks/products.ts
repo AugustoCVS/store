@@ -1,6 +1,6 @@
 export const MockProducts = [
   {
-    id: 8,
+    id: "8",
     name: "Headset Cloud Stinger",
     brand: "HyperX",
     description:
@@ -8,11 +8,12 @@ export const MockProducts = [
     photo:
       "https://mks-sistemas.nyc3.digitaloceanspaces.com/products/hyperxcloudstinger.webp",
     price: "600.00",
+    quantity: 1,
     createdAt: "2023-10-30T16:25:01.093Z",
     updatedAt: "2023-10-30T16:25:01.093Z",
   },
   {
-    id: 7,
+    id: "7",
     name: "Headset Cloud Revolver",
     brand: "HyperX",
     description:
@@ -20,6 +21,7 @@ export const MockProducts = [
     photo:
       "https://mks-sistemas.nyc3.digitaloceanspaces.com/products/hyperx-cloudrevolver.webp",
     price: "1000.00",
+    quantity: 1,
     createdAt: "2023-10-30T16:25:01.093Z",
     updatedAt: "2023-10-30T16:25:01.093Z",
   },
