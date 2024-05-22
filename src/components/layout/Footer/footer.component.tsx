@@ -9,7 +9,7 @@ export const Footer: React.FC = () => {
   return (
     <S.FooterContainer data-testid={TESTS_IDS.CONTAINER}>
       <S.FooterText data-testid={TESTS_IDS.TEXT}>
-        MKS sistemas © Todos os direitos reservados
+        AGT © Todos os direitos reservados
       </S.FooterText>
     </S.FooterContainer>
   );
